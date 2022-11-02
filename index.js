@@ -1,72 +1,89 @@
-//TEAMS
-const teamA = {
-  teamName: "teamA",
-  players: [
-    { firstName: "mike", lastName: "smith", age: 20 },
-    { firstName: "sarah", lastName: "smith", age: 24 },
-  ],
-};
+// strg+space in empty braces > listing all items
+// alias teamA as [newName] um die umzubennen
+import {allTeams, teamA as firstTeam} from "./modules/team.js"
 
-const teamB = {
-  teamName: "teamB",
-  players: [
-    { firstName: "hugo", lastName: "james", age: 21 },
-    { firstName: "laura", lastName: "uru", age: 22 },
-  ],
-};
+// import * as actions from "./modules/actions.js"
+import {
+getHowManyTeams,
+getTeamNames,
+getTeamPlayersFirstName
+} from "./modules/actions.js"
 
-const teamC = {
-  teamName: "teamC",
-  players: [
-    { firstName: "mike", lastName: "smith", age: 18 },
-    { firstName: "sarah", lastName: "james", age: 30 },
-  ],
-};
+import {scores, teamsRanking} from "./modules/statistics.js"
 
-const teamD = {
-  teamName: "teamD",
-  players: [
-    { firstName: "jack", lastName: "ionu", age: 29 },
-    { firstName: "matt", lastName: "otto", age: 40 },
-  ],
-};
+import bestTeam from "./modules/bestTeam.js"
+// //TEAMS
+// const teamA = {
+//   teamName: "teamA",
+//   players: [
+//     { firstName: "mike", lastName: "smith", age: 20 },
+//     { firstName: "sarah", lastName: "smith", age: 24 },
+//   ],
+// };
 
-const allTeams = [teamA, teamB, teamC, teamD];
+// const teamB = {
+//   teamName: "teamB",
+//   players: [
+//     { firstName: "hugo", lastName: "james", age: 21 },
+//     { firstName: "laura", lastName: "uru", age: 22 },
+//   ],
+// };
+
+// const teamC = {
+//   teamName: "teamC",
+//   players: [
+//     { firstName: "mike", lastName: "smith", age: 18 },
+//     { firstName: "sarah", lastName: "james", age: 30 },
+//   ],
+// };
+
+// const teamD = {
+//   teamName: "teamD",
+//   players: [
+//     { firstName: "jack", lastName: "ionu", age: 29 },
+//     { firstName: "matt", lastName: "otto", age: 40 },
+//   ],
+// };
+
+// const allTeams = [teamA, teamB, teamC, teamD];
 
 console.log(allTeams);
 
-//ACTIONS
+// //ACTIONS
 
-const getTeamNames = (teams) => teams.map((team) => team.teamName);
+// const getTeamNames = (teams) => teams.map((team) => team.teamName);
 
-const getHowManyTeams = (teams) => teams.length;
+// const getHowManyTeams = (teams) => teams.length;
 
-const getTeamPlayersFirstName = (team) =>
-  team.players.map((player) => player.firstName);
+// const getTeamPlayersFirstName = (team) =>
+//   team.players.map((player) => player.firstName);
 
-console.log("getTeamNames:", getTeamNames(allTeams));
-console.log("getHowManyTeams:", getHowManyTeams(allTeams));
-console.log("getTeamPlayersFirstName:", getTeamPlayersFirstName(teamA));
+ console.log("getTeamNames:", getTeamNames(allTeams));
+ console.log("getHowManyTeams:", getHowManyTeams(allTeams));
+ console.log("getTeamPlayersFirstName:", getTeamPlayersFirstName(firstTeam));
 
-//STATISTICS
-const teamsRanking = {
-  first: "teamA",
-  second: "teamD",
-  third: "teamC",
-  fourth: "teamB",
-};
+// //STATISTICS
 
-const scores = {
-  teamA: 12,
-  teamD: 9,
-  teamC: 4,
-  teamB: 1,
-};
+// const teamsRanking = {
+//   first: "teamA",
+//   second: "teamD",
+//   third: "teamC",
+//   fourth: "teamB",
+// };
 
-//BEST TEAM
-const bestTeam = {
-  name: teamsRanking.first,
-  scores: scores.teamA,
-};
+// const scores = {
+//   teamA: 12,
+//   teamD: 9,
+//   teamC: 4,
+//   teamB: 1,
+// };
+
+// //BEST TEAM
+// const bestTeam = {
+//   name: teamsRanking.first,
+//   scores: scores.teamA,
+// };
 
 console.log("bestTeam:", bestTeam);
+
+import "./modules/side-effect.js"
